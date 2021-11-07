@@ -44,6 +44,7 @@ import java.util.Properties;
 public class StreamingJob {
 
 	final static String inputTopic = "input-topic";
+	final static String jobTitle = "StreamingJob";
 
 	public static void main(String[] args) throws Exception {
 	    final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
@@ -57,10 +58,9 @@ public class StreamingJob {
 		// 	.keyBy();
 
 		KafkaSource<String> source = KafkaSource.<String>builder()
-		    .setBootstrapServers("localhost:9092")
+		    .setBootstrapServers(bootstrapServers)
 		    .setTopics(inputTopic)
 		    .setGroupId("my-group")
-		    .setProperty("bootstrap.servers", bootstrapServers)
 		    .setStartingOffsets(OffsetsInitializer.earliest())
 		    .setValueOnlyDeserializer(new SimpleStringSchema())
 		    .build();
@@ -98,6 +98,6 @@ public class StreamingJob {
 		 */
 
 		// execute program
-		env.execute("redpanda");
+		env.execute(jobTitle);
 	}
 }

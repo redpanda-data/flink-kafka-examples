@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package io.vectorized.examples;
+package io.redpanda.examples;
 
 
 import org.apache.flink.api.common.functions.FlatMapFunction;

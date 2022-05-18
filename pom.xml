@@ -20,7 +20,7 @@ under the License.
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.vectorized.examples</groupId>
+	<groupId>io.redpanda.examples</groupId>
 	<artifactId>flink-kafka-examples</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
@@ -161,7 +161,7 @@ under the License.
 							</filters>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>io.vectorized.examples.WordCount</mainClass>
+									<mainClass>io.redpanda.examples.WordCount</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
